@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="publication-web-resources/css/main.css" rel="stylesheet" type="text/css"></link>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			html, body {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+
+			#scrollContainer {
+				width: 100%;
+				height: 100vh;
+				overflow-y: scroll;
+				scroll-snap-type: y mandatory;
+				-webkit-overflow-scrolling: touch;
+			}
+
+			.scroll-slide {
+				width: 100%;
+				height: 100vh;
+				scroll-snap-align: start;
+				scroll-snap-stop: always;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.page-iframe {
+				width: 100%;
+				height: 100%;
+				border: none;
+				display: block;
+			}
+
+			.prev, .next {
+				position: fixed;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 1000;
+				cursor: pointer;
+				user-select: none;
+				padding: 16px 20px;
+				font-size: 24px;
+				background: rgba(0,0,0,0.3);
+				color: white;
+				border-radius: 4px;
+				transition: background 0.2s;
+			}
+
+			.prev:hover, .next:hover {
+				background: rgba(0,0,0,0.6);
+			}
+
+			.prev {
+				left: 12px;
+			}
+
+			.next {
+				right: 12px;
+			}
+		</style>
+		<script src="publication-web-resources/script/main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="scrollContainer"></div>
+	</body>
+</html>
